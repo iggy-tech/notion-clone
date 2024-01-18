@@ -88,18 +88,20 @@ const HeroSection = () => {
 
   const sliderSettings = {
 
-
-    speed: 500,
   
+  
+    speed: 500,
+    slidesToShow: 1.67,
     slidesToScroll: 1,
-    swipeToSlide: true,
-    focusOnSelect: true,
-
-    slidesToShow: 0,
-
-    afterChange: (index : any) => setActiveSlide(index),
-    onSwipe: (index : any) => setActiveSlide(index),
-    className : 'px-10 inset-x-4 '
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    className: "w-full",
+    margins: true,
+    centerMode: true, // Added for centering the slides
+    centerPadding: '50px', // Adjust this value for the desired gap
+    margin: '10px', // You can use px as well, same as padding
+    
 
 
   };
@@ -107,7 +109,7 @@ const HeroSection = () => {
   if (isMediumScreen) {
     sliderSettings.slidesToShow = 1.67;
   } else if (isSmallScreen) {
-    sliderSettings.slidesToShow =1.2;
+    sliderSettings.slidesToShow =1;
   }
 
 
@@ -141,7 +143,7 @@ mx-auto
             text-2xl
             pt-4
             text-center
-            w-3/5
+            w-2/3
             mx-auto
             "
         >
@@ -174,22 +176,28 @@ mx-auto
         <Slider {...sliderSettings}>
           {tabs.map((tab) => (
             <div
+     
+
+
               key={tab.name}
               className={`
           
               xl:flex 
               justify-center 
-              space-x-1 // Adjust this value for the desired gap
+        
               xl:pt-4
               sm:my-10
               xl:my-0
               xl:w-60
               xl:h-36
               h-36
+       
+              
             
               border rounded-xl pt-2 bg-white
               `}
-              onClick={() => setActiveTab(tab)}
+            
+             
             >
             <div className="px-4">
               <div className="flex items-center">
