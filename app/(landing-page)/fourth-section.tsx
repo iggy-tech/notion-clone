@@ -23,8 +23,8 @@ const tabs = [
       { title: "Board", picture: "/assets/ZombieingDoodle.svg" },
       { title: "Table", picture: "/assets/SprintingDoodle.svg" },
       { title: "Timeline", picture: "/assets/UnboxingDoodle.svg" },
-      { title: "Calendar", picture: "/assets/RollingDoodle.svg" },
-      { title: "Gallery", picture: "/assets/DogJumpDoodle.svg" },
+      { title: "AI", picture: "/assets/RollingDoodle.svg" },
+      { title: "Note", picture: "/assets/DogJumpDoodle.svg" },
       { title: "List", picture: "/assets/RunningDoodle.svg" },
     ],
     description: "Choose from a variety of colors",
@@ -144,7 +144,7 @@ const FourthSection = () => {
 
         <div
           className={cn(
-            "flex items-center justify-center text-2xl py-10 xl:w-1/3 text-center ",
+            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 pt-6 xl:w-1/3 text-center ",
             font.className
           )}
         >
@@ -152,22 +152,23 @@ const FourthSection = () => {
           as you need it to be.&quot;
         </div>
 
-        <div className="flex items-center justify-center gap-4 ">
-          <div>
+
+          <div className="items-center flex justify-center flex-col">
             <Image
               src="/logos/logoipsum-327.svg"
               alt="Canva logo"
               width={1000}
               height={1000}
-              className="w-14 "
+              className="pt-2 xl:pt-0  w-10 xl:w-14 "
             />
+       
+          <div className="m text-center">
+            <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
+            <div className="text-sm">Marketing Director, Palium Software</div>
           </div>
-          <div>
-            <div className="font-medium">Carlos Hernandez</div>
-            <div>Marketing Director, Palium Software</div>
           </div>
         </div>
-      </div>
+     
     </>
   );
 };

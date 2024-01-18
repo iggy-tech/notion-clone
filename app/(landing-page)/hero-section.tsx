@@ -191,6 +191,7 @@ mx-auto
               xl:w-60
               xl:h-36
               h-36
+            
        
               
             
@@ -215,7 +216,7 @@ mx-auto
               <motion.div
                 className="flex flex-col text-sm"
                 initial={{ y: 0 }}
-                animate={{ y: activeTab === tab ? 10 : 25 }}
+      
                 transition={{ duration: 0.2 }}
               >
                 <div>

@@ -58,45 +58,41 @@ const FifthSection = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className=" relative flex justify-center items-center flex-col">
-      <div className="text-5xl font-medium text-center pb-8">
+    <div className="pt-16 relative flex justify-center items-center flex-col">
+      <div className=" text-3xl xl:text-5xl font-medium text-center pb-8">
         Every team, side-by-side
       </div>
 
-      <div className="hidden md:flex items-center justify-between hover:cursor-pointer w-[55%]">
+      <div className="grid grid-cols-5 md:flex  hover:cursor-pointer   xl:w-[55%]">
         {tabs.map((tab) => (
           <motion.div
             key={tab.name}
             className={`
               flex 
-              w-[16%]
-              h-32
-                justify-center
-                items-center
-                flex-col
-                space-y-2
+           
+           
                 cursor-pointer
         
                 ${
                   activeTab.name === tab.name
-                    ? "border-2 border-[#f6f5f4] rounded-2xl pt-2 bg-white"
-                    : " rounded-2xl pt-2 bg-[#f6f5f4] hover:bg-[#ebebe9]"
+                    ? "rounded-md bg-[#f6f5f4] hover:bg-[#ebebe9]"
+                    : " "
                 }
             `}
             onClick={() => setActiveTab(tab)}
           >
-            <div className="flex flex-col items-center justify-center mx-auto">
-              <div className="text-6xl">{tab.icon}</div>
-              <div className="font-medium text-lg mt-1">{tab.name}</div>
+            <div className="flex flex-col   items-center md:justify-center mx-auto">
+              <div className="hidden md:flex text-6xl">{tab.icon}</div>
+              <div className="font-medium text-sm  xl:text-lg mt-1">{tab.name}</div>
             </div>
           </motion.div>
         ))}
       </div>
 
       {/* Display content based on the active tab */}
-      <div className="pt-6 hidden md:block w-[55%]">
+      <div className="pt-6  px-10 xl:w-[55%]">
       {activeTab && (
-            <div className="flex justify-center items-center flex-col">
+            <div className=" flex justify-center items-center flex-col">
               <Image
                 src={activeTab.image}
                 width={1025}
@@ -104,8 +100,6 @@ const FifthSection = () => {
                 alt="logo"
                 className="
                 w-full
-
-
              border
              rounded-xl
              p-20
