@@ -115,15 +115,18 @@ const HeroSection = () => {
 
   return (
     <section className=" ">
-      <div className="md:items-center flex flex-col">
+      <div className="md:items-center flex flex-col ">
         <div
           className="
      
           font-medium
-          w-full
-          lg:w-1/2
-xl::w-1/3
-xl:mx-auto
+        
+          2xl:w-1/3
+          md:w-2/3
+          
+          lg:px-0
+    
+
   text-5xl
             xl:text-6xl     
             flex
@@ -296,7 +299,7 @@ xl:mx-auto
         )}
 
         {/* Display content based on the active tab */}
-        <div className="xl:py-10   md:block xl:w-3/4   2xl:w-[55%]">
+        <div className="py-10 px-8 md:px-0   md:block xl:w-3/4   2xl:w-[55%]">
           {activeTab && (
             <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer ">
               <Image
