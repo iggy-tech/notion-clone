@@ -62,19 +62,21 @@ const FifthSection = () => {
         Every team, side-by-side
       </div>
 
-      <div className="grid grid-cols-5  xl:grid-cols-6 w-full mx-auto gap-1 space-x-2 ">
+      <div className="grid grid-cols-4  md:grid-cols-6 md:row-span-1  gap-4  xl:gap-6 mt-8   xl:px-0  ">
         {tabs.map((tab) => (
           <motion.div
             key={tab.name}
             className={`
               flex 
+              py-1
+              p-8
       
                 cursor-pointer
         
                 ${
                   activeTab.name === tab.name
                     ? "rounded-md bg-[#f6f5f4]  hover:bg-[#ebebe9] flex items-center justify-center"
-                    : " "
+                    : "hover:bg-[#f3f3f1] rounded-md flex items-center justify-center  "
                 }
             `}
             onClick={() => setActiveTab(tab)}
@@ -90,9 +92,9 @@ const FifthSection = () => {
       </div>
 
       {/* Display content based on the active tab */}
-      <div className="pt-6   w-full ">
+      <div className="py-10   lg:px-16 xl:px-0 md:px-16  w-full ">
         {activeTab && (
-          <div className=" flex justify-center items-center flex-col">
+          <div className=" flex justify-center items-center flex-col  ">
             <Image
               src={activeTab.image}
               width={1025}
@@ -101,6 +103,8 @@ const FifthSection = () => {
               className="
                 w-full
              border
+             p-20
+             xl:p-40
              rounded-xl
           
              
