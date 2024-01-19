@@ -13,7 +13,7 @@ const font = Lora({
 const ThirdSection = () => {
     return (
         <div className="xl:pt-32 pt-24 relative flex justify-center items-center flex-col">
-            <div className="xl:text-5xl text-3xl 2xl:w-3/5  font-medium xl:w-1/3 mx-auto text-center">
+            <div className="xl:text-5xl text-3xl 2xl:w-3/5 w-3/5 font-medium xl:w-1/3 mx-auto text-center">
                 Consolidate tools. Cut costs.
             </div>
 
@@ -29,7 +29,7 @@ const ThirdSection = () => {
                         xl:right-[18%]
                         2xl:right-[22%]
                         2xl:w-56
-                        w-48
+                        
 
                     "
                 />
@@ -42,7 +42,7 @@ const ThirdSection = () => {
                 height={1000}
                 className="pt-10 xl:pt-10 
                 xl:w-1/2
-                w-3/5
+                w-3/4
 
                 
                 "

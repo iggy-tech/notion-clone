@@ -75,10 +75,11 @@ const FifthSection = () => {
         
                 ${
                   activeTab.name === tab.name
-                    ? "rounded-md bg-[#f6f5f4]  hover:bg-[#ebebe9] flex items-center justify-center"
-                    : "hover:bg-[#f3f3f1] rounded-md flex items-center justify-center  "
-                }
-            `}
+                  ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
+                  : "  rounded-md p-1 items-center justify-center hover:bg-[#eae7e7] "
+                } `
+            }
+                
             onClick={() => setActiveTab(tab)}
           >
             <div className="flex flex-col   items-center md:justify-center mx-auto">
