@@ -106,10 +106,8 @@ const HeroSection = () => {
 
   };
 
-  if (isMediumScreen) {
-    sliderSettings.slidesToShow = 1.67;
-  } else if (isSmallScreen) {
-    sliderSettings.slidesToShow = 0.8;
+   if (isSmallScreen) {
+    sliderSettings.slidesToShow = 1;
 
   }
 
