@@ -237,7 +237,7 @@ const HeroSection = () => {
             ))}
           </Slider>
         ) : (
-          <div className="lg:flex  xl:space-x-4 items-center justify-between hover:cursor-pointer xl:w-3/4 2xl:w-[55%]">
+          <div className="lg:flex  xl:space-x-4 items-center justify-between hover:cursor-pointer gap-4 w-3/4 2xl:w-[55%]">
             {tabs.map((tab) => (
               <motion.div
                 key={tab.name}
@@ -300,7 +300,7 @@ const HeroSection = () => {
         )}
 
         {/* Display content based on the active tab */}
-        <div className="py-10 px-8 md:px-0   md:block xl:w-3/4   2xl:w-[55%]">
+        <div className="py-10 px-8 md:px-0  lg:w-3/4  md:block xl:w-3/4   2xl:w-[55%]">
           {activeTab && (
             <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer ">
               <Image
@@ -311,6 +311,7 @@ const HeroSection = () => {
                 className="
                 w-full
                 p-20
+                xl:p-40
                 shadow-md
                 rounded-xl
                 bg-[#f6f5f4]
