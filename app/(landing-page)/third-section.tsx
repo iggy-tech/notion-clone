@@ -13,7 +13,7 @@ const font = Lora({
 const ThirdSection = () => {
     return (
         <div className="xl:pt-32 pt-24 relative flex justify-center items-center flex-col">
-            <div className="xl:text-5xl text-3xl w-3/5  font-medium xl:w-1/4 mx-auto text-center">
+            <div className="xl:text-5xl text-3xl 2xl:w-3/5  font-medium xl:w-1/3 mx-auto text-center">
                 Consolidate tools. Cut costs.
             </div>
 
@@ -26,8 +26,10 @@ const ThirdSection = () => {
                     className="
                         absolute
                         xl:top-[15%]
-                        right-[22%]
-                        w-56
+                        xl:right-[18%]
+                        2xl:right-[22%]
+                        2xl:w-56
+                        w-48
 
                     "
                 />
@@ -38,11 +40,16 @@ const ThirdSection = () => {
                 alt="Canva logo"
                 width={1000}
                 height={1000}
-                className="pt-10 xl:pt-10 "
+                className="pt-10 xl:pt-10 
+                xl:w-1/2
+                w-3/5
+
+                
+                "
             />
 
 <div className={cn(
-    'flex items-center justify-center text-xl xl:text-2xl pt-10 pb-4  xl:py-10 px-8 xl:w-1/3 text-center ',
+    'flex items-center justify-center text-xl xl:text-2xl pt-10 pb-4  xl:py-10 px-8  text-center  w-4/5 ',
     font.className
 )}>
                 &quot;We got rid of nearly a dozen different tools because of what Bird does for us.&quot;

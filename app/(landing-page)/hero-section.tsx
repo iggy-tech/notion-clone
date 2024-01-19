@@ -12,68 +12,74 @@ import { useInView } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useMediaQuery } from 'react-responsive';
-
+import { useMediaQuery } from "react-responsive";
 
 import { useState } from "react";
 import {
-    PiArrowRight,
-    PiBookOpenTextLight,
-    PiFileThin,
-    PiSparkleLight,
-    PiTargetLight,
-  } from "react-icons/pi";
+  PiArrowRight,
+  PiBookOpenTextLight,
+  PiFileThin,
+  PiSparkleLight,
+  PiTargetLight,
+} from "react-icons/pi";
 
 const tabs = [
   {
-    icon: <PiSparkleLight className="text-3xl mr-2 text-purple-600 bg-purple-100 p-1 rounded-md" />,
+    icon: (
+      <PiSparkleLight className="text-3xl mr-2 text-purple-600 bg-purple-100 p-1 rounded-md" />
+    ),
     name: "AI",
     feature: "Now with Q&A",
     description: "Ask literally anything. Bird Will answer.",
     more: (
-        <div className="text-purple-600 flex items-center">
-          Learn more <PiArrowRight className="ml-1 text-sm" />
-        </div>
-      ),
+      <div className="text-purple-600 flex items-center">
+        Learn more <PiArrowRight className="ml-1 text-sm" />
+      </div>
+    ),
     image: "/assets/GroovyDoodle.svg",
   },
   {
-    icon:  <PiBookOpenTextLight className="text-3xl mr-2 text-red-600 bg-red-100 p-1 rounded-md" />,
+    icon: (
+      <PiBookOpenTextLight className="text-3xl mr-2 text-red-600 bg-red-100 p-1 rounded-md" />
+    ),
     name: "Wikis",
     description: "Centralize your knowledge. Make it accessible.",
     more: (
-        <div className="text-red-600 flex items-center">
-            Learn more <PiArrowRight className="ml-1 text-sm" />
-        </div>
-      ),
+      <div className="text-red-600 flex items-center">
+        Learn more <PiArrowRight className="ml-1 text-sm" />
+      </div>
+    ),
     image: "/assets/PlantDoodle.svg",
   },
 
   {
-    icon : <PiTargetLight className="text-3xl mr-2 text-blue-600 bg-blue-100 p-1 rounded-md" />,
+    icon: (
+      <PiTargetLight className="text-3xl mr-2 text-blue-600 bg-blue-100 p-1 rounded-md" />
+    ),
     name: "Projects",
     description: "Manage complex projects without the chaos",
     more: (
-        <div className="text-blue-600 flex items-center">
-             Learn more <PiArrowRight className="ml-1 text-sm" />
-        </div>
-      ),
- 
+      <div className="text-blue-600 flex items-center">
+        Learn more <PiArrowRight className="ml-1 text-sm" />
+      </div>
+    ),
+
     image: "/assets/CoffeeDoddle.svg",
   },
   {
-    icon: <PiFileThin className="text-3xl mr-2 text-yellow-600 bg-yellow-100 p-1 rounded-md" />,
+    icon: (
+      <PiFileThin className="text-3xl mr-2 text-yellow-600 bg-yellow-100 p-1 rounded-md" />
+    ),
     name: "Docs",
     description: "Simple, powerfulm beautiful. Next-gen notes & docs.",
     more: (
-        <div className="text-yellow-600 flex items-center">
-            Learn more <PiArrowRight className="ml-1 text-sm" />
-        </div>
-      ),
+      <div className="text-yellow-600 flex items-center">
+        Learn more <PiArrowRight className="ml-1 text-sm" />
+      </div>
+    ),
 
     image: "/assets/RunningDoodle.svg",
   },
-  
 ];
 
 const HeroSection = () => {
@@ -87,55 +93,48 @@ const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const sliderSettings = {
-
-  
-  
     speed: 500,
-    slidesToShow: 1.67,
+    slidesToShow: 1.37,
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     pauseOnFocus: true,
-    className: "w-full",
-    margins: true,
-    centerMode: true, // Added for centering the slides
-    centerPadding: '50px', // Adjust this value for the desired gap
-    margin: '10px', // You can use px as well, same as padding
     
 
+
+    centerMode: true, // Added for centering the slides
 
   };
 
   if (isMediumScreen) {
     sliderSettings.slidesToShow = 1.67;
   } else if (isSmallScreen) {
-    sliderSettings.slidesToShow =1;
-  }
+    sliderSettings.slidesToShow = 0.8;
 
+  }
 
   return (
     <section className=" ">
       <div className="md:items-center flex flex-col">
         <div
           className="
-sm:font-semibold
-md:w-1/3
-
-mx-auto
+     
+          font-medium
+          w-full
+          lg:w-1/2
+xl::w-1/3
+xl:mx-auto
   text-5xl
-            xl:text-6xl
-        
+            xl:text-6xl     
             flex
             justify-center
-            font-medium
+            xl:font-medium
             xl:pt-14
             text-center 
-          
-            
             pt-6
             "
         >
-          Write, plan, share. With AI at your side. 
+          Write, plan, share. With AI at your side.
         </div>
 
         <p
@@ -147,7 +146,7 @@ mx-auto
             mx-auto
             "
         >
-          Bird is the connected workspace where better, faster work happens
+          Bird is the connected workspace where better, faster work happens.
         </p>
 
         <div className="flex gap-4 pt-6 items-center justify-center">
@@ -156,7 +155,7 @@ mx-auto
               <div className="flex items-center justify-center">
                 <div className="text-lg">Get bird free</div>
                 <div>
-                <PiArrowRight className="ml-2 " />
+                  <PiArrowRight className="ml-2 " />
                 </div>
               </div>
             </Button>
@@ -173,14 +172,11 @@ mx-auto
           />
         </div>
         {isSmallScreen ? (
-        <Slider {...sliderSettings}>
-          {tabs.map((tab) => (
-            <div
-     
-
-
-              key={tab.name}
-              className={`
+          <Slider {...sliderSettings}>
+            {tabs.map((tab) => (
+              <div
+                key={tab.name}
+                className={`
           
               xl:flex 
               justify-center 
@@ -197,54 +193,51 @@ mx-auto
             
               border rounded-xl pt-2 bg-white
               `}
-            
-             
-            >
-            <div className="px-4">
-              <div className="flex items-center">
-                <div>{tab.icon}</div>
-                <div className="text-2xl font-medium">{tab.name}</div>
-
-                {/* Render feature tag only for "AI" tab */}
-                {tab.name === "AI" && (
-                  <div className="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full ml-2">
-                    {tab.feature}
-                  </div>
-                )}
-              </div>
-
-              <motion.div
-                className="flex flex-col text-sm"
-                initial={{ y: 0 }}
-      
-                transition={{ duration: 0.2 }}
               >
-                <div>
-                  {/* Only animate the description */}
+                <div className="px-4">
+                  <div className="flex items-center">
+                    <div>{tab.icon}</div>
+                    <div className="text-2xl font-medium">{tab.name}</div>
+
+                    {/* Render feature tag only for "AI" tab */}
+                    {tab.name === "AI" && (
+                      <div className="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full ml-2">
+                        {tab.feature}
+                      </div>
+                    )}
+                  </div>
+
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    className="flex flex-col text-sm"
+                    initial={{ y: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {tab.description}
+                    <div>
+                      {/* Only animate the description */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {tab.description}
+                      </motion.div>
+                    </div>
+
+                    {/* Conditional rendering for "Learn more" link */}
+                    {activeTab === tab && (
+                      <div className="text-sm mt-2">{tab.more}</div>
+                    )}
                   </motion.div>
                 </div>
-
-                {/* Conditional rendering for "Learn more" link */}
-                {activeTab === tab && (
-                  <div className="text-sm mt-2">{tab.more}</div>
-                )}
-              </motion.div>
-            </div>
-            </div>
-          ))}
-        </Slider>
-      ) : (
-        <div className="xl:flex px-8 xl:space-x-4 items-center justify-between hover:cursor-pointer md:w-[55%]">
-          {tabs.map((tab) => (
-            <motion.div
-              key={tab.name}
-              className={`
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <div className="xl:flex px-8 xl:space-x-4 items-center justify-between hover:cursor-pointer xl:w-4/5 2xl:w-[55%]">
+            {tabs.map((tab) => (
+              <motion.div
+                key={tab.name}
+                className={`
                 xl:flex 
                 justify-center 
                 space-x-4
@@ -255,60 +248,57 @@ mx-auto
                 xl:h-36
                 ${
                   activeTab === tab
-                    ? "border rounded-xl pt-2 bg-white"
-                    : "shadow-md rounded-xl pt-2  bg-[#f6f5f4]"
+                    ? "border rounded-xl pt-2 bg-white "
+                    : "shadow-md rounded-xl pt-2  bg-[#f6f5f4] m"
                 }
               `}
-              onMouseEnter={() => setActiveTab(tab)}
-            >
-                       <div className="px-4">
-              <div className="flex items-center">
-                <div>{tab.icon}</div>
-                <div className="text-2xl font-medium">{tab.name}</div>
-
-                {/* Render feature tag only for "AI" tab */}
-                {tab.name === "AI" && (
-                  <div className="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full ml-2">
-                    {tab.feature}
-                  </div>
-                )}
-              </div>
-
-              <motion.div
-                className="flex flex-col text-sm"
-                initial={{ y: 0 }}
-                animate={{ y: activeTab === tab ? 10 : 25 }}
-                transition={{ duration: 0.2 }}
+                onMouseEnter={() => setActiveTab(tab)}
               >
-                <div>
-                  {/* Only animate the description */}
+                <div className="px-4">
+                  <div className="flex items-center">
+                    <div>{tab.icon}</div>
+                    <div className="text-2xl font-medium">{tab.name}</div>
+
+                    {/* Render feature tag only for "AI" tab */}
+                    {tab.name === "AI" && (
+                      <div className="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full ml-2">
+                        {tab.feature}
+                      </div>
+                    )}
+                  </div>
+
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    className="flex flex-col text-sm"
+                    initial={{ y: 0 }}
+                    animate={{ y: activeTab === tab ? 10 : 25 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {tab.description}
+                    <div>
+                      {/* Only animate the description */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {tab.description}
+                      </motion.div>
+                    </div>
+
+                    {/* Conditional rendering for "Learn more" link */}
+                    {activeTab === tab && (
+                      <div className="text-sm mt-2">{tab.more}</div>
+                    )}
                   </motion.div>
                 </div>
-
-                {/* Conditional rendering for "Learn more" link */}
-                {activeTab === tab && (
-                  <div className="text-sm mt-2">{tab.more}</div>
-                )}
               </motion.div>
-            </div>
-            </motion.div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
         {/* Display content based on the active tab */}
-        <div className="xl:py-10 p-10  md:block xl:w-[55%]">
+        <div className="xl:py-10 p-10  md:block xl:w-4/5  2xl:w-[55%]">
           {activeTab && (
-            <div
-            className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer "
-            
-            >
+            <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer ">
               <Image
                 src={activeTab.image}
                 width={500}

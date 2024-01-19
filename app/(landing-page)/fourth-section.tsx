@@ -22,7 +22,7 @@ const tabs = [
     images: [
       { title: "Board", picture: "/assets/ZombieingDoodle.svg" },
       { title: "Table", picture: "/assets/SprintingDoodle.svg" },
-      { title: "Timeline", picture: "/assets/UnboxingDoodle.svg" },
+      { title: "Goal", picture: "/assets/UnboxingDoodle.svg" },
       { title: "AI", picture: "/assets/RollingDoodle.svg" },
       { title: "Note", picture: "/assets/DogJumpDoodle.svg" },
       { title: "List", picture: "/assets/RunningDoodle.svg" },
@@ -72,7 +72,7 @@ const FourthSection = () => {
         <div className="text-3xl xl:text-5xl font-medium justify-center items-center flex">
           Powerful building blocks
         </div>
-        <div className="grid xl:grid-cols-4  md:grid-cols-2 md:row-span-1  gap-4  xl:gap-6 mt-8   md:px-16 xl:px-0 xl:w-[55%] mx-auto md:w-full">
+        <div className="grid xl:grid-cols-4  md:grid-cols-2 md:row-span-1  gap-4  xl:gap-6 mt-8   md:px-16 xl:px-0 xl:w-4/5 2xl:w-[55%] mx-auto md:w-full">
           {tabs.map((tab, index) => (
             <div
               key={index}
@@ -110,7 +110,7 @@ const FourthSection = () => {
                           className={`${
                             index === activeImageIndex
                               ?  "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
-                              : " md:border-[#cccccc] md:border border-[1px] rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
+                              : "  rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
                           }  `}
                         >
                           <div className=" text-sm items-center justify-center flex">
@@ -144,7 +144,7 @@ const FourthSection = () => {
 
         <div
           className={cn(
-            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 pt-6 xl:w-1/3 text-center ",
+            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 pt-6   md:w-2/3 xl:w-1/2 text-center ",
             font.className
           )}
         >

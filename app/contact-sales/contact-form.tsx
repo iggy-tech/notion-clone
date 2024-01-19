@@ -126,7 +126,15 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="md:flex  justify-center pt-20 px-8">
+    <div
+    style={{
+      height: "100%",
+      width: "100%",
+      position: "relative",
+      overflow: "hidden",
+    }}
+    
+    className="md:flex  justify-center pt-20 px-8">
       {!submitted ? (
         <div>
           <div className="text-5xl font-medium w-2/3">
@@ -147,8 +155,7 @@ export default function ContactForm() {
               <PiCheckLight className="text-2xl " />
 
               <div className=" font-normal pb-4 w-80">
-                One flexible tool for your entire company to share knowledge,
-                ship projects, and collaborate.
+              One flexible tool for your entire company to share knowledge, ship projects, and collaborate.
               </div>
             </div>
 

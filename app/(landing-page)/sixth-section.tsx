@@ -89,17 +89,17 @@ const SixthSection = () => {
   return (
     <>
       <div className="pt-20  xl:pt-24 flex justify-center items-center flex-col ">
-        <div className="text-3xl w-3/4 xl:text-5xl font-medium xl:w-1/3 text-center">
+        <div className="text-3xl w-3/4 xl:text-5xl font-medium xl:w-1/2 text-center">
           Join a global movement. Unleash your creativity.
         </div>
-        <div className="py-4 px-10  xl:w-1/3  text-center">
+        <div className="py-4 px-10  xl:w-1/2 2xl:w-1/3  text-center">
           Our vibrant community produces content, teaches courses, and leads
           events all over the world.
         </div>
         <div className="text-sky-500 flex items-center hover:underline hover:cursor-pointer">
           Learn more <PiArrowRight className="ml-3 text-sm " />
         </div>
-        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-10 xl:w-3/5 mx-auto md:w-full">
+        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-10 xl:w-4/5 2xl:[55%]  mx-auto md:w-full">
         {tabs.map((tab, index) => (
         <div
           key={index}
@@ -110,13 +110,13 @@ const SixthSection = () => {
                 ? "md:col-span-6 lg:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex"
                 : index <= 4
                 ? "md:col-span-6 bg-[#f6f5f4] p-6 rounded-xl flex"
-                : "col-span-8 bg-[#f6f5f4] p-6 rounded-xl"
+                : "col-span-12  md:col-span-8   bg-[#f6f5f4] p-6 rounded-xl"
             }
           `}
         >
           {index <= 2 ? (
             <div className="flex flex-col">
-              <div className="text-5xl font-medium text-sky-600">{tab.text}</div>
+              <div className=" text-5xl font-medium text-sky-600">{tab.text}</div>
               <div className="text-sm">{tab.subtext}</div>
             </div>
           ) : index <= 4 ? (
@@ -184,31 +184,9 @@ const SixthSection = () => {
 
 
 
-        <div
-          className={cn(
-            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 px-8 pt-6 xl:w-1/3 text-center ",
-            font.className
-          )}
-        >
-          &quot;Bird adapts to your needs. It&apos;s as minimal or as powerful
-          as you need it to be.&quot;
-        </div>
 
 
-          <div className="items-center flex justify-center flex-col">
-            <Image
-              src="/logos/logoipsum-327.svg"
-              alt="Canva logo"
-              width={1000}
-              height={1000}
-              className="pt-2 xl:pt-0  w-10 xl:w-14 "
-            />
-       
-          <div className="m text-center">
-            <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
-            <div className="text-sm">Marketing Director, Palium Software</div>
-          </div>
-          </div>
+  
         </div>
      
     </>

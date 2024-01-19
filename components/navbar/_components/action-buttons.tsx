@@ -20,7 +20,7 @@ const ActionButtons = () => {
   };
 
   return (
-    <div>
+    <div className="pr-2">
       <div className=" items-center justify-center flex ">
 
       <div className="flex xl:space-x-4">
@@ -33,7 +33,7 @@ const ActionButtons = () => {
             
             "
         >
-          <div className=" text-sm">Request a demo</div>
+          <div className="">Request a demo</div>
         </Link>
 
         <div className="font-thin     
@@ -51,7 +51,8 @@ const ActionButtons = () => {
             items-center
             hidden
                 border-none 
-                text-sm
+                text-md
+                
                 "
           >
             Log in
@@ -70,13 +71,12 @@ const ActionButtons = () => {
         <div
           onClick={toggleDropdown}
           className="
-             bg-[#565add]
-             p-3
+        
              rounded-full
              xl:hidden
              "
         >
-          <X className="h-6 w-6 text-[#eff0ff] items-center justify-center rounded-full" />
+          <X className="h-5 w-5  items-center justify-center rounded-full" />
         </div>
       )}
       {!isDropdownVisible && (
