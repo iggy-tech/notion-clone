@@ -72,7 +72,7 @@ const FourthSection = () => {
         <div className="text-3xl xl:text-5xl font-medium justify-center items-center flex">
           Powerful building blocks
         </div>
-        <div className="grid xl:grid-cols-4  md:grid-cols-2 md:row-span-1  gap-4  xl:gap-6 mt-8  px-8 md:px-16 xl:px-0 xl:w-4/5  2xl:w-[55%] mx-auto md:w-full">
+        <div className="grid xl:grid-cols-4  md:grid-cols-2 md:row-span-1  gap-4  xl:gap-6 mt-8  px-8 md:px-16 xl:px-0 xl:w-3/4  2xl:w-[55%] mx-auto md:w-full">
           {tabs.map((tab, index) => (
             <div
               key={index}
@@ -109,15 +109,13 @@ const FourthSection = () => {
                           onClick={() => setActiveImageIndex(index)}
                           className={`${
                             index === activeImageIndex
-                              ?  "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
+                              ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
                               : "  rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
                           }  `}
                         >
                           <div className=" text-sm items-center justify-center flex">
                             {image.title}
-
-                            </div>
-                     
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -152,23 +150,21 @@ const FourthSection = () => {
           as you need it to be.&quot;
         </div>
 
+        <div className="items-center flex justify-center flex-col">
+          <Image
+            src="/logos/logoipsum-327.svg"
+            alt="Canva logo"
+            width={1000}
+            height={1000}
+            className="pt-2 xl:pt-0  w-10 xl:w-14 "
+          />
 
-          <div className="items-center flex justify-center flex-col">
-            <Image
-              src="/logos/logoipsum-327.svg"
-              alt="Canva logo"
-              width={1000}
-              height={1000}
-              className="pt-2 xl:pt-0  w-10 xl:w-14 "
-            />
-       
           <div className="m text-center">
             <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
             <div className="text-sm">Marketing Director, Palium Software</div>
           </div>
-          </div>
         </div>
-     
+      </div>
     </>
   );
 };

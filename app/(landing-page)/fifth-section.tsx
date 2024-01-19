@@ -54,11 +54,10 @@ const tabs = [
 const FifthSection = () => {
   const ref = useRef(null);
 
-
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="pt-20 2xl:pt-16 relative flex justify-center items-center flex-col px-8 md:px-0 xl:w-4/5 mx-auto 2xl:w-[55%] ">
+    <div className="pt-20 2xl:pt-16 relative flex justify-center items-center flex-col px-8 md:px-0 xl:w-3/4 mx-auto 2xl:w-[55%] ">
       <div className=" text-3xl xl:text-5xl font-medium text-center pb-8">
         Every team, side-by-side
       </div>
@@ -82,7 +81,9 @@ const FifthSection = () => {
           >
             <div className="flex flex-col   items-center md:justify-center mx-auto">
               <div className="hidden md:flex text-4xl">{tab.icon}</div>
-              <div className="font-medium text-sm  xl:text-lg mt-1">{tab.name}</div>
+              <div className="font-medium text-sm  xl:text-lg mt-1">
+                {tab.name}
+              </div>
             </div>
           </motion.div>
         ))}
@@ -90,23 +91,23 @@ const FifthSection = () => {
 
       {/* Display content based on the active tab */}
       <div className="pt-6   w-full ">
-      {activeTab && (
-            <div className=" flex justify-center items-center flex-col">
-              <Image
-                src={activeTab.image}
-                width={1025}
-                height={500}
-                alt="logo"
-                className="
+        {activeTab && (
+          <div className=" flex justify-center items-center flex-col">
+            <Image
+              src={activeTab.image}
+              width={1025}
+              height={500}
+              alt="logo"
+              className="
                 w-full
              border
              rounded-xl
           
              
                 "
-              />
-            </div>
-          )}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
