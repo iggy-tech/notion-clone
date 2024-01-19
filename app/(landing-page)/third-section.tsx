@@ -48,26 +48,21 @@ const ThirdSection = () => {
                 &quot;We got rid of nearly a dozen different tools because of what Bird does for us.&quot;
             </div>
 
-            <div className='text-center xl:flex items-center justify-center gap-4 pt-6 '>
-                <div>
-                    <Image
-                        src="/logos/logoipsum-285.svg"
-                        alt="Canva logo"
-                        width={1000}
-                        height={1000}
-                        className="xl:w-40 w-28 mx-auto "
-                    />
-                </div>
-                <div className=''>
-                    <div className='font-medium pt-2'>
-                        Carlos Hernandez
-                    </div>
-                    <div>
-                      Marketing Director, Bird Software
-                        </div>
-                </div>
-
-            </div>
+   
+            <div className="items-center flex justify-center flex-col">
+            <Image
+              src="/logos/logoipsum-327.svg"
+              alt="Canva logo"
+              width={1000}
+              height={1000}
+              className="pt-2 xl:pt-0  w-10 xl:w-14 "
+            />
+       
+          <div className=" text-center">
+            <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
+            <div className="text-sm">Marketing Director, Palium Software</div>
+          </div>
+          </div>
 
         </div>
     );

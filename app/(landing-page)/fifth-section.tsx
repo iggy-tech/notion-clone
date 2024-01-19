@@ -63,7 +63,7 @@ const FifthSection = () => {
         Every team, side-by-side
       </div>
 
-      <div className="grid grid-cols-5 md:flex  hover:cursor-pointer   xl:w-[55%]">
+      <div className="grid grid-cols-5 space-x-20 mx-auto md:flex  hover:cursor-pointer  ">
         {tabs.map((tab) => (
           <motion.div
             key={tab.name}
