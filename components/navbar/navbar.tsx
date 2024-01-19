@@ -26,7 +26,7 @@ const Navbar = () => {
 
   const navbarClasses = `
     flex items-center justify-between space-x-10 bg-white  h-14
-    sticky top-0 z-50 ${hasScrolled ? "border-b" : ""}
+    sticky top-0 z-50 ${hasScrolled ? "border-b border-black" : ""}
   `;
 
   return (

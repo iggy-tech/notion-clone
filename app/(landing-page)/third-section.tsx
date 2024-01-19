@@ -42,7 +42,7 @@ const ThirdSection = () => {
             />
 
 <div className={cn(
-    'flex items-center justify-center text-xl xl:text-2xl pt-10 pb-4  xl:py-10 px-10 xl:w-1/3 text-center ',
+    'flex items-center justify-center text-xl xl:text-2xl pt-10 pb-4  xl:py-10 px-8 xl:w-1/3 text-center ',
     font.className
 )}>
                 &quot;We got rid of nearly a dozen different tools because of what Bird does for us.&quot;

@@ -55,12 +55,11 @@ const tabs = [
     description:
       "Show only tasks assigned to you, or items marked as urgent. Break down any project in the way that is most helpful to you.",
     images: [
-      { title: "Board", picture: "/assets/ZombieingDoodle.svg" },
-      { title: "Table", picture: "/assets/SprintingDoodle.svg" },
-      { title: "Timeline", picture: "/assets/UnboxingDoodle.svg" },
-      { title: "AI", picture: "/assets/RollingDoodle.svg" },
-      { title: "Note", picture: "/assets/DogJumpDoodle.svg" },
-      { title: "List", picture: "/assets/RunningDoodle.svg" },
+      { title: "Event in New York", picture: "/assets/ZombieingDoodle.svg" },
+      { title: "Community meet up in London", picture: "/assets/SprintingDoodle.svg" },
+      { title: "Conference in Brazil", picture: "/assets/UnboxingDoodle.svg" },
+      { title: "Milan Tech Week", picture: "/assets/RollingDoodle.svg" },
+      { title: "Madrid tech festival", picture: "/assets/DogJumpDoodle.svg" },
     ],
     
   },
@@ -70,7 +69,7 @@ type Tab = {
   icon: JSX.Element;
   header: string;
   subheading: string;
-  images?: { title: string; picture: string }[];
+  images: { title: string; picture: string }[];
   description?: string;
   image?: string;
 };
@@ -80,6 +79,10 @@ const SixthSection = () => {
 
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const handleDotClick = (index : any) => {
+    setActiveImageIndex(index);
+  };
 
 
 
@@ -96,72 +99,94 @@ const SixthSection = () => {
         <div className="text-sky-500 flex items-center hover:underline hover:cursor-pointer">
           Learn more <PiArrowRight className="ml-3 text-sm " />
         </div>
-
-        <div className="grid grid-cols-12   md:row-span-1  gap-4  xl:gap-6 mt-8 px-10  xl:w-3/5  mx-auto md:w-full ">
-          {tabs.map((tab, index) => (
+        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-10 xl:w-3/5 mx-auto md:w-full">
+        {tabs.map((tab, index) => (
+        <div
+          key={index}
+          className={`
+            col-span-12
+            ${
+              index <= 2
+                ? "md:col-span-6 lg:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex"
+                : index <= 4
+                ? "md:col-span-6 bg-[#f6f5f4] p-6 rounded-xl flex"
+                : "col-span-8 bg-[#f6f5f4] p-6 rounded-xl"
+            }
+          `}
+        >
+          {index <= 2 ? (
+            <div className="flex flex-col">
+              <div className="text-5xl font-medium text-sky-600">{tab.text}</div>
+              <div className="text-sm">{tab.subtext}</div>
+            </div>
+          ) : index <= 4 ? (
+            <div>
+              <div className="text-2xl font-medium">{tab.header}</div>
+              <div className="text-sm mt-2">{tab.subheading}</div>
+              <div className="flex justify-center items-center flex-col">
+                <Image
+                  src={tab.image || ""}
+                  width={1025}
+                  height={500}
+                  alt="logo"
+                  className="w-full  rounded-xl p-20"
+                />
+              </div>
+            </div>
+          ) : (
             <>
-            <div
-              key={index}
-              className={`${
-                index <= 2 ?
-                " col-span-12 md:col-span-6  lg:col-span-4 "
-                : " col-span-12 md:col-span-6  "
-              } bg-[#f6f5f4] p-6 rounded-xl  flex `}
-  
-                >
-                <div className="flex flex-col ">
+            <div>
+              {tab.images && (
+                <div className="flex justify-center items-center flex-col">
+                  <Image
+                    src={tab.images[activeImageIndex].picture}
+                    alt={`${tab.images[activeImageIndex].title} Image`}
+                    width={500}
+                    height={500}
+                    className="w-full rounded-xl p-20"
+                  />
 
-                      
-                <div className="text-5xl font-medium text-sky-600">{tab.text}</div>
-                <div className="text-sm">{tab.subtext}</div>
-
-
-        
-              </div>
-                <>
-              
-              { index >= 3 && (
-                <>
-                 <div>
-
-                <div className="text-lg font-medium mt-2">{tab.header}</div>
-                <div className="text-sm mt-2">{tab.subheading}</div>
-            
-                <div className="mt-4">
-                    <Image
-                      src={tab?.image || ""}
-                      alt={`${tab.header} Image`}
-                      width={500}
-                      height={500}
-                      className="mt-10  rounded-xl"
-                    />
+                  <div>
+                    <div className="text-xl font-medium mt-10 md:mt-0  pb-4">
+                      {tab.images[activeImageIndex].title}
+                    </div>
                   </div>
+
+                  
+                  <div className="flex space-x-2 xl:space-x-6">
+                    {tab.images.map((image, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleDotClick(index)}
+                        className={`${
+                          index === activeImageIndex
+                            ? "p-2 rounded-full bg-green-400 "
+                            : "  p-2 rounded-full bg-blue-400"
+                        }  `}
+                      >
+                      
+                      </div>
+                    ))}
+
+                    </div>
                 </div>
-                </>
-                )}
-                </>
-            
-
-
-              </div>
-
-
-
-
+              )}
+            </div>
+            </>
+          )}
+        </div>
+      ))}
+      </div>
       
 
+              
 
 
-     
 
-              </>
-         
-          ))}
-        </div>
 
         <div
           className={cn(
-            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 pt-6 xl:w-1/3 text-center ",
+            "flex items-center justify-center text-xl xl:text-2xl xl:py-10 px-8 pt-6 xl:w-1/3 text-center ",
             font.className
           )}
         >

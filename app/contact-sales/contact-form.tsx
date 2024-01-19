@@ -180,7 +180,7 @@ export default function ContactForm() {
         items-center 
         justify-center 
         text-center 
-        px-10 
+        px-8
         mx-auto
         "
         >

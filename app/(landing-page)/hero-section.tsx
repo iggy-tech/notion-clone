@@ -240,7 +240,7 @@ mx-auto
           ))}
         </Slider>
       ) : (
-        <div className="xl:flex px-10 xl:space-x-4 items-center justify-between hover:cursor-pointer md:w-[55%]">
+        <div className="xl:flex px-8 xl:space-x-4 items-center justify-between hover:cursor-pointer md:w-[55%]">
           {tabs.map((tab) => (
             <motion.div
               key={tab.name}

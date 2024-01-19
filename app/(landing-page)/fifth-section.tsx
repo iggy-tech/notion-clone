@@ -69,8 +69,7 @@ const FifthSection = () => {
             key={tab.name}
             className={`
               flex 
-           
-           
+      
                 cursor-pointer
         
                 ${
@@ -90,7 +89,7 @@ const FifthSection = () => {
       </div>
 
       {/* Display content based on the active tab */}
-      <div className="pt-6  px-10 xl:w-[55%]">
+      <div className="pt-6  px-8 xl:w-[55%]">
       {activeTab && (
             <div className=" flex justify-center items-center flex-col">
               <Image
