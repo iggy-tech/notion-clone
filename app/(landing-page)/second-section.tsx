@@ -28,7 +28,7 @@ const SecondSection = () => {
         Read customer stories <PiArrowRight className="ml-3 text-sm " />
       </div>
 
-      <div className='grid grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center px-10 xl:w-3/5 2xl:w-1/2 pt-10 gap-10 text-center mx-auto'>
+      <div className='grid grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center px-10 lg:w-1/2 pt-10 gap-10 text-center mx-auto'>
         {logos.map((logo, index) => (
           <div key={index} className="">
             <Image

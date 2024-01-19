@@ -99,7 +99,7 @@ const SixthSection = () => {
         <div className="text-sky-500 flex items-center hover:underline hover:cursor-pointer">
           Learn more <PiArrowRight className="ml-3 text-sm " />
         </div>
-        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-10 xl:w-4/5 2xl:[55%]  mx-auto md:w-full">
+        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-8  md:px-16 xl:px-0 xl:w-4/5 2xl:w-[55%] mx-auto md:w-full">
         {tabs.map((tab, index) => (
         <div
           key={index}
@@ -129,7 +129,7 @@ const SixthSection = () => {
                   width={1025}
                   height={500}
                   alt="logo"
-                  className="w-full  rounded-xl p-20"
+                  className="w-full  rounded-xl p-10 xl:p-20"
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ const SixthSection = () => {
                     alt={`${tab.images[activeImageIndex].title} Image`}
                     width={500}
                     height={500}
-                    className="w-full rounded-xl p-20"
+                    className="w-full rounded-xl xl:p-20"
                   />
 
                   <div>

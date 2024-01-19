@@ -58,7 +58,7 @@ const FifthSection = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="pt-20 2xl:pt-16 relative flex justify-center items-center flex-col xl:w-4/5 mx-auto 2xl:w-[55%] px-10">
+    <div className="pt-20 2xl:pt-16 relative flex justify-center items-center flex-col px-8 md:px-0 xl:w-4/5 mx-auto 2xl:w-[55%] ">
       <div className=" text-3xl xl:text-5xl font-medium text-center pb-8">
         Every team, side-by-side
       </div>
@@ -101,7 +101,8 @@ const FifthSection = () => {
                 w-full
              border
              rounded-xl
-             p-20
+          
+             
                 "
               />
             </div>

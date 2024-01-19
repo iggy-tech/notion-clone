@@ -233,7 +233,7 @@ xl:mx-auto
             ))}
           </Slider>
         ) : (
-          <div className="xl:flex px-8 xl:space-x-4 items-center justify-between hover:cursor-pointer xl:w-4/5 2xl:w-[55%]">
+          <div className="lg:flex  xl:space-x-4 items-center justify-between hover:cursor-pointer w-4/5 2xl:w-[55%]">
             {tabs.map((tab) => (
               <motion.div
                 key={tab.name}
@@ -296,7 +296,7 @@ xl:mx-auto
         )}
 
         {/* Display content based on the active tab */}
-        <div className="xl:py-10 p-10  md:block xl:w-4/5  2xl:w-[55%]">
+        <div className="xl:py-10   md:block w-4/5   2xl:w-[55%]">
           {activeTab && (
             <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer ">
               <Image
