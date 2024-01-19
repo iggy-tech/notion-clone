@@ -17,23 +17,7 @@ const ThirdSection = () => {
                 Consolidate tools. Cut costs.
             </div>
 
-            <div className="hidden xl:flex">
-                <Image
-                    src="/assets/RollerSkatingDoodle.svg"
-                    alt="Groovy Doodle logo"
-                    width={1000}
-                    height={1000}
-                    className="
-                        absolute
-                        xl:top-[15%]
-                        xl:right-[18%]
-                        2xl:right-[22%]
-                        2xl:w-56
-                        
-
-                    "
-                />
-            </div>
+  
 
             <Image
                 src="/assets/canva-logo.png"
@@ -41,8 +25,8 @@ const ThirdSection = () => {
                 width={1000}
                 height={1000}
                 className="pt-10 xl:pt-10 
-                xl:w-1/2
-                w-3/4
+                xl:w-1/3
+                w-4/5
 
                 
                 "
