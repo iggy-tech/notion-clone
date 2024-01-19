@@ -123,8 +123,10 @@ const HeroSection = () => {
         
           2xl:w-1/3
           md:w-2/3
+          w-full
           
           lg:px-0
+          px-8
     
 
   text-5xl
@@ -153,7 +155,7 @@ const HeroSection = () => {
         </p>
 
         <div className="flex gap-4 pt-6 items-center justify-center">
-          <Link href="/free">
+          <Link href="/">
             <Button className="py-1 ">
               <div className="flex items-center justify-center">
                 <div className="text-lg">Get bird free</div>
