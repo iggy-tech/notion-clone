@@ -70,6 +70,7 @@ const FifthSection = () => {
               flex 
               py-1
               p-8
+             
       
                 cursor-pointer
         
