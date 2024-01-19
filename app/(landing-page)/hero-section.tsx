@@ -121,7 +121,8 @@ const HeroSection = () => {
         
           2xl:w-1/3
           md:w-2/3
-          w-full
+          xl:w-1/2
+          
           
           lg:px-0
           px-8
