@@ -109,13 +109,15 @@ const FourthSection = () => {
                           onClick={() => setActiveImageIndex(index)}
                           className={`${
                             index === activeImageIndex
-                              ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
+                              ?  "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
                               : "  rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
                           }  `}
                         >
                           <div className=" text-sm items-center justify-center flex">
                             {image.title}
-                          </div>
+
+                            </div>
+                     
                         </div>
                       ))}
                     </div>
@@ -150,21 +152,23 @@ const FourthSection = () => {
           as you need it to be.&quot;
         </div>
 
-        <div className="items-center flex justify-center flex-col">
-          <Image
-            src="/logos/logoipsum-327.svg"
-            alt="Canva logo"
-            width={1000}
-            height={1000}
-            className="pt-2 xl:pt-0  w-10 xl:w-14 "
-          />
 
+          <div className="items-center flex justify-center flex-col">
+            <Image
+              src="/logos/logoipsum-327.svg"
+              alt="Canva logo"
+              width={1000}
+              height={1000}
+              className="pt-2 xl:pt-0  w-10 xl:w-14 "
+            />
+       
           <div className="m text-center">
             <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
             <div className="text-sm">Marketing Director, Palium Software</div>
           </div>
+          </div>
         </div>
-      </div>
+     
     </>
   );
 };

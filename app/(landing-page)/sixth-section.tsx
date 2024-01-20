@@ -58,16 +58,41 @@ const tabs = [
       { title: "Madrid tech festival", picture: "/assets/DogJumpDoodle.svg" },
     ],
   },
+  {
+    profile: "/assets/DoogieDoodle.svg",
+    userName: "Carlos Hernandez",
+    userHandle : "@carlos",
+    userText: (
+      <div className="">
+        <span className="text-sky-500">@birdsoftware </span>
+      it is definitely the best tool I have ever used.
+      </div>
+    ),
+  },
+  {
+    profile: "/assets/DoogieDoodle.svg",
+    userName: "John Wright",
+    userHandle : "@johnwrigh31t",
+    userText: (
+      <div className="">
+      <span className="text-sky-500">@birdsoftware </span>
+    it is definitely the best tool I have ever used.
+    </div>
+    ),
+  },
+  {
+    profile: "/assets/DoogieDoodle.svg",
+    userName: "Jessica Smith",
+    userHandle : "@JessicaS1",
+    userText: (
+      <div className="">
+      <span className="text-sky-500">@birdsoftware </span>
+    it is definitely the best tool I have ever used.
+    </div>
+    ),
+  }
 ];
 
-type Tab = {
-  icon: JSX.Element;
-  header: string;
-  subheading: string;
-  images: { title: string; picture: string }[];
-  description?: string;
-  image?: string;
-};
 
 const SixthSection = () => {
   const ref = useRef(null);
@@ -91,20 +116,24 @@ const SixthSection = () => {
         <div className="text-sky-500 flex items-center hover:underline hover:cursor-pointer">
           Learn more <PiArrowRight className="ml-3 text-sm " />
         </div>
-        <div className="grid grid-cols-12 md:row-span-1 gap-4 xl:gap-6 mt-8 px-8  md:px-16 xl:px-0 xl:w-3/4 2xl:w-[55%] mx-auto md:w-full">
+        <div className="grid grid-cols-12 md:row-span-2 gap-4 xl:gap-6 mt-8 px-8  md:px-16 xl:px-0 xl:w-3/4 2xl:w-[55%] mx-auto md:w-full">
           {tabs.map((tab, index) => (
             <div
               key={index}
               className={`
-            col-span-12
-            ${
-              index <= 2
-                ? "md:col-span-6 lg:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex"
-                : index <= 4
-                ? "md:col-span-6 bg-[#f6f5f4] p-6 rounded-xl flex"
-                : "col-span-12  md:col-span-8   bg-[#f6f5f4] p-6 rounded-xl"
-            }
-          `}
+              col-span-12
+              ${
+                index <= 2
+                  ? "md:col-span-6 lg:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex"
+                  : index <= 4
+                  ? "md:col-span-6 bg-[#f6f5f4] p-6 rounded-xl flex"
+                  : index === 5
+                  ? " md:col-span-6  lg:col-span-8  lg:row-span-3    bg-[#f6f5f4] p-6 rounded-xl "
+                  : index > 5
+                  ? "col-span-12 lg:col-span-4  md:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex-col "
+                  : "l"
+              }
+            `}
             >
               {index <= 2 ? (
                 <div className="flex flex-col">
@@ -127,17 +156,17 @@ const SixthSection = () => {
                     />
                   </div>
                 </div>
-              ) : (
+              ) : index === 5 ? (
                 <>
-                  <div>
+                
                     {tab.images && (
-                      <div className="flex justify-center items-center flex-col">
+                      <div className="flex justify-center items-center flex-col ">
                         <Image
                           src={tab.images[activeImageIndex].picture}
                           alt={`${tab.images[activeImageIndex].title} Image`}
-                          width={500}
+                          width={1025}
                           height={500}
-                          className="w-full rounded-xl xl:p-20"
+                          className="w-full rounded-xl "
                         />
 
                         <div>
@@ -146,7 +175,7 @@ const SixthSection = () => {
                           </div>
                         </div>
 
-                        <div className="flex space-x-2 xl:space-x-6">
+                        <div className="flex space-x-2 xl:space-x-6 xl:mt-10">
                           {tab.images.map((image, index) => (
                             <div
                               key={index}
@@ -161,6 +190,27 @@ const SixthSection = () => {
                         </div>
                       </div>
                     )}
+              
+                </> 
+              ) : index > 5 && (
+                <>
+                  <div className="flex  flex-col">
+                    <Image
+                      src={tab.profile || ""}
+                      width={500}
+                      height={500}
+                      alt="logo"
+                      className="w-10 h-10 rounded-full border p-1"
+                    />
+                  </div>
+                  <div className="text-xl font-medium ">
+                    {tab.userName}
+                  </div>
+                  <div className="text-sm font-medium ">
+                    {tab.userHandle}
+                  </div>
+                  <div className="text-sm font-medium mt-10 md:mt-0  pb-4">
+                    {tab.userText}
                   </div>
                 </>
               )}
@@ -170,6 +220,11 @@ const SixthSection = () => {
       </div>
     </>
   );
-};
+}
+
+
+
+
 
 export default SixthSection;
+

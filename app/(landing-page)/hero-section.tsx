@@ -13,6 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery } from "react-responsive";
+import Swipe from 'react-slick'
 
 import { useState } from "react";
 import {
@@ -110,6 +111,11 @@ const HeroSection = () => {
     sliderSettings.slidesToShow = 1;
 
   }
+
+  const handleTabChange = (index : any) => {
+    setActiveTab(tabs[index]);
+  };
+
 
   return (
     <section className=" ">

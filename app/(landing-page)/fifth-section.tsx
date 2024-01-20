@@ -57,8 +57,8 @@ const FifthSection = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="pt-20 2xl:pt-16 relative flex justify-center items-center flex-col px-8 md:px-0 xl:w-3/4 mx-auto 2xl:w-[55%] ">
-      <div className=" text-3xl xl:text-5xl font-medium text-center pb-8">
+    <div className=" relative flex justify-center items-center flex-col px-8 md:px-0 xl:w-3/4 mx-auto 2xl:w-[55%] ">
+      <div className="pt-20 lg:pt-0 text-3xl xl:text-5xl font-medium text-center pb-8">
         Every team, side-by-side
       </div>
 
@@ -68,16 +68,16 @@ const FifthSection = () => {
             key={tab.name}
             className={`
               flex 
-              py-1
-              p-8
+            p-1
+              md:p-8
              
       
                 cursor-pointer
         
                 ${
                   activeTab.name === tab.name
-                  ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
-                  : "  rounded-md p-1 items-center justify-center hover:bg-[#eae7e7] "
+                  ? "rounded-md md:rounded-xl bg-[#f6f5f4]  md:bg-white border-gray-200 md:border items-center justify-center flex p-1 "
+                  : "md:bg-[#f6f5f4]   rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
                 } `
             }
                 
