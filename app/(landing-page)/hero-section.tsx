@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,11 +9,9 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { useMediaQuery } from "react-responsive";
-import Swipe from 'react-slick'
+
 
 import { useState } from "react";
 import {
@@ -23,6 +21,7 @@ import {
   PiSparkleLight,
   PiTargetLight,
 } from "react-icons/pi";
+
 
 const tabs = [
   {
@@ -89,28 +88,10 @@ const HeroSection = () => {
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const sliderSettings = {
-    speed: 500,
-    slidesToShow: 1.37,
-    slidesToScroll: 1,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    
+ 
 
 
-    centerMode: true, // Added for centering the slides
-
-  };
-
-   if (isSmallScreen) {
-    sliderSettings.slidesToShow = 1;
-
-  }
 
   const handleTabChange = (index : any) => {
     setActiveTab(tabs[index]);
@@ -118,7 +99,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className=" ">
+    <section className="">
       <div className="md:items-center flex flex-col ">
         <div
           className="
@@ -182,68 +163,67 @@ const HeroSection = () => {
           />
         </div>
         {isSmallScreen ? (
-          <Slider {...sliderSettings}>
-            {tabs.map((tab) => (
-              <div
-                key={tab.name}
-                className={`
-          
-              xl:flex 
-              justify-center 
+          <div className="px-8">
+         <div className="grid grid-cols-4   md:row-span-1  gap-4  xl:gap-6 mt-8   xl:px-0  ">
+        {tabs.map((tab) => (
+          <motion.div
+            key={tab.name}
+            className={`
+              flex 
+            p-1
+              md:p-8
+             
+      
+                cursor-pointer
         
-              xl:pt-4
-              sm:my-10
-              xl:my-0
-              xl:w-60
-              xl:h-36
-              h-36
-            
-       
-              
-            
-              border rounded-xl pt-2 bg-white
-              `}
-              >
-                <div className="px-4">
-                  <div className="flex items-center">
-                    <div>{tab.icon}</div>
-                    <div className="text-2xl font-medium">{tab.name}</div>
-
-                    {/* Render feature tag only for "AI" tab */}
-                    {tab.name === "AI" && (
-                      <div className="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full ml-2">
-                        {tab.feature}
-                      </div>
-                    )}
-                  </div>
-
-                  <motion.div
-                    className="flex flex-col text-sm"
-                    initial={{ y: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div>
-                      {/* Only animate the description */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {tab.description}
-                      </motion.div>
-                    </div>
-
-                    {/* Conditional rendering for "Learn more" link */}
-                    {activeTab === tab && (
-                      <div className="text-sm mt-2">{tab.more}</div>
-                    )}
-                  </motion.div>
-                </div>
+                ${
+                  activeTab.name === tab.name
+                  ? "rounded-md md:rounded-xl bg-[#f6f5f4]  md:bg-white border-gray-200 md:border items-center justify-center flex p-1 "
+                  : "md:bg-[#f6f5f4]   rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
+                } `
+            }
+                
+            onClick={() => setActiveTab(tab)}
+          >
+            <div className="flex flex-col   items-center md:justify-center mx-auto">
+              <div className="hidden md:flex text-4xl">{tab.icon}</div>
+              <div className="font-medium text-sm  xl:text-lg mt-1">
+                {tab.name}
               </div>
-            ))}
-          </Slider>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Display content based on the active tab */}
+      <div className="pt-6 md:py-10   lg:px-16 xl:px-0 md:px-16  w-full ">
+        {activeTab && (
+          <div className=" flex justify-center items-center flex-col  ">
+            <Image
+              src={activeTab.image}
+              width={1025}
+              height={500}
+              alt="logo"
+              className="
+                w-full
+             border
+             p-20
+             xl:p-40
+             rounded-xl
+          
+             
+                "
+            />
+          </div>
+        )}
+      </div>
+          </div>
+
+  
+           
+
         ) : (
-          <div className="lg:flex  xl:space-x-4 items-center justify-between hover:cursor-pointer gap-4 w-3/4 2xl:w-[55%]">
+          <div className="flex  xl:space-x-4 items-center justify-between hover:cursor-pointer gap-4 w-4/5 xl:w-3/4 2xl:w-[55%]">
             {tabs.map((tab) => (
               <motion.div
                 key={tab.name}
@@ -253,9 +233,10 @@ const HeroSection = () => {
                 space-x-4
                 xl:pt-4
                 sm:my-10
+               
                 xl:my-0
-                xl:w-60
-                xl:h-36
+                w-60
+                h-36
                 ${
                   activeTab === tab
                     ? "border rounded-xl pt-2 bg-white "
@@ -306,9 +287,9 @@ const HeroSection = () => {
         )}
 
         {/* Display content based on the active tab */}
-        <div className="py-10 px-8 md:px-0  lg:w-3/4  md:block xl:w-3/4   2xl:w-[55%]">
+        <div className="hidden md:flex py-10 px-8 md:px-0    lg:w-3/4 2xl:w-[55%]">
           {activeTab && (
-            <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer ">
+            <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer w-full">
               <Image
                 src={activeTab.image}
                 width={500}
