@@ -135,8 +135,7 @@ export default function ContactForm() {
     }}
     
     className="md:flex  justify-center pt-20 px-8">
-      {!submitted ? (
-        <div>
+            <div>
           <div className="text-5xl font-medium w-2/3">
             Contact our sales team
           </div>
@@ -177,29 +176,7 @@ export default function ContactForm() {
             </div>
           </div>
         </div>
-      ) : (
-        <div
-          className="
-        text-4xl 
-        md:text-6xl 
-        my-40 
-        text-[#eff0ff] 
-        items-center 
-        justify-center 
-        text-center 
-        px-8
-        mx-auto
-        "
-        >
-          <div>
-            {" "}
-            Thank you for contacting us! We will get back to you soon.{" "}
-          </div>
-          <div className="mx-auto items-center justify-center flex py-40">
-            <Smile className=" text-[#4b42ad]" size={100} />
-          </div>
-        </div>
-      )}
+  
 
       <Form {...form}>
         {!submitted ? (
@@ -379,7 +356,39 @@ export default function ContactForm() {
             </div>
           </form>
         ) : (
-          <></>
+          <>
+                  <div
+          className="
+        text-xl 
+        md:text-2xl 
+        flex 
+        items-center
+        justify-center
+        flex-col
+        
+
+ 
+        px-8
+
+        "
+        >
+          <div className="w-80">
+
+          <Image
+            src="/assets/MeditatingDoodle.svg"
+            alt="logo"
+            width={1000}
+            height={1000}
+            className="mx-auto"
+          />
+
+          <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10"> 
+          We&apos;ve received your inquiry and will be contacting you via email shortly.
+          </div>
+      
+        </div>
+        </div>
+          </>
         )}
       </Form>
     </div>

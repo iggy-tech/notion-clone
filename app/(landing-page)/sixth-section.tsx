@@ -63,7 +63,7 @@ const tabs = [
     userName: "Carlos Hernandez",
     userHandle : "@carlos",
     userText: (
-      <div className="">
+      <div className="md:mt-6">
         <span className="text-sky-500">@birdsoftware </span>
       it is definitely the best tool I have ever used.
       </div>
@@ -74,7 +74,7 @@ const tabs = [
     userName: "John Wright",
     userHandle : "@johnwrigh31t",
     userText: (
-      <div className="">
+      <div className="md:mt-6">
       <span className="text-sky-500">@birdsoftware </span>
     it is definitely the best tool I have ever used.
     </div>
@@ -85,7 +85,7 @@ const tabs = [
     userName: "Jessica Smith",
     userHandle : "@JessicaS1",
     userText: (
-      <div className="">
+      <div className="md:mt-6">
       <span className="text-sky-500">@birdsoftware </span>
     it is definitely the best tool I have ever used.
     </div>
@@ -203,13 +203,13 @@ const SixthSection = () => {
                       className="w-10 h-10 rounded-full border p-1"
                     />
                   </div>
-                  <div className="text-xl font-medium ">
+                  <div className="text-xl font-normal ">
                     {tab.userName}
                   </div>
-                  <div className="text-sm font-medium ">
+                  <div className="text-sm font-normal ">
                     {tab.userHandle}
                   </div>
-                  <div className="text-sm font-medium mt-10 md:mt-0  pb-4">
+                  <div className="text-sm font-normal mt-10 md:mt-0  pb-4">
                     {tab.userText}
                   </div>
                 </>

@@ -84,7 +84,7 @@ const tabs = [
 
 const HeroSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
@@ -93,13 +93,10 @@ const HeroSection = () => {
 
 
 
-  const handleTabChange = (index : any) => {
-    setActiveTab(tabs[index]);
-  };
 
 
   return (
-    <section className="">
+
       <div className="md:items-center flex flex-col ">
         <div
           className="
@@ -284,6 +281,8 @@ const HeroSection = () => {
               </motion.div>
             ))}
           </div>
+
+     
         )}
 
         {/* Display content based on the active tab */}
@@ -308,7 +307,7 @@ const HeroSection = () => {
           )}
         </div>
       </div>
-    </section>
+
   );
 };
 

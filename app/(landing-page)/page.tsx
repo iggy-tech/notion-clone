@@ -7,7 +7,7 @@ import FifthSection from "./fifth-section";
 import SixthSection from "./sixth-section";
 import SeventhSection from "./seventh-section";
 import GetStartedFree from "./eighth-section";
-import Footer from "./footer";
+import Footer from "@/components/footer";
 
 const LandingPage = () => {
     return ( 
